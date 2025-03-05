@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Club de Lectura</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-image: url("background.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+        }
+
+        .tabla-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            background: rgba(255, 255, 255, 0.8);
+            color: black;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="tabla-container">
+        <table id="librosTabla">
+            <tr>
+                <th>Por Leer</th>
+                <th>Leídos</th>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        const librosPorLeer = [
+            "Don Quijote de la Mancha",
+            "La Vuelta al Mundo en 80 Días",
+            "El Diario de Ana Frank",
+            "El Libro de los 5 Anillos",
+            "La Odisea",
+            "Dune",
+            "Padre rico padre pobre",
+            "El Padrino",
+            "El Conde de Montecristo",
+            "La isla del tesoro",
+            "Orgullo y Prejuicio",
+            "El retrato de Dorian Gray",
+            "Drácula",
+            "Crimen y Castigo",
+            "Frankenstein",
+            "Moby Dick",
+            "Matar a un Ruiseñor"
+        ];
+
+        const tabla = document.getElementById("librosTabla");
+
+        librosPorLeer.forEach(libro => {
+            let fila = document.createElement("tr");
+            fila.innerHTML = `<td>${libro}</td><td></td>`;
+            tabla.appendChild(fila);
+        });
+    </script>
+
+</body>
+</html>
